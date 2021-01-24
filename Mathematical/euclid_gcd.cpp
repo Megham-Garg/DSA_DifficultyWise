@@ -12,3 +12,4 @@ int main()
     cout << gcd(30, 15);
     return 0;
 }
+// O(log(max(a,b)))
