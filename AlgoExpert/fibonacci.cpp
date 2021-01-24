@@ -132,5 +132,5 @@ int main()
     cout << fibIter(n);
 	return 0; 
 } 
-// O(n) time and O(n) space due to recursion stack
+// O(2^n) time and O(n) space due to recursion stack
 // O(n) time and O(1) space
