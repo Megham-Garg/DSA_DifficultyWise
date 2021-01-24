@@ -29,6 +29,10 @@ int GCD(int a, int b){
     return GCD(b, a%b);
 }
 
+int modInverse(int a, int m){
+    Triplet ans = extended_euclid(a,m);
+    return ans.x;
+}
 int main()
 {
     cout << gcd(30, 15);
@@ -41,3 +45,9 @@ int main()
 // therefore bx1 + (a%b)y1 = ax + by
 // x = y1
 // y = x1 - (a/b)y1
+
+// modulo inverse
+// gcd(a*b)%m = 1
+// a.b + mQ = 1
+// 
+// here b is mod inverse for a, m

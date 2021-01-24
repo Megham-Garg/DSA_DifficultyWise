@@ -1,11 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 bool chech_prime(int x){
     for(int i = 2; i*i < x; i++){
         if(!x%i) return false;
     }
     return true;
 }
+
+ll factorial(ll n){
+    if(n==0 || n==1) return 1;
+    return n*factorial(n-1);
+}
+
+
 int main()
 {
     int n = 10;
@@ -19,9 +27,12 @@ int main()
             for(int j = i; j < n+1; j++) map[j]=0;
         }
     }
-    for(i = 0; i < n; i++)
-    if(map[i]) cout << i << " ";
-    cout << endl;
+    // for(int i = 0; i < n; i++)
+    // if(map[i]) cout << i << " ";
+    // cout << endl;
+
+    cout << factorial(4);
+
     return 0;
 }
 // O(log(log(n)))
