@@ -9,11 +9,17 @@ public:
 };
 
 Triplet extended_euclid(int a, int b){
+    if(!b){
+        Triplet myAns;
+        myAns.gcd = a;
+        myAns.x = 1;
+        myAns.y = 0;
+    }
     Triplet smallAns = extended_euclid(b, a%b);
     Triplet myAns;
     myAns.gcd = smallAns.gcd;
     myAns.x = smallAns.y;
-    myAns.y = smallAns.x - (a/b)*smallAns.y
+    myAns.y = smallAns.x - (a/b)*smallAns.y;
     return Triplet;
 }
 
