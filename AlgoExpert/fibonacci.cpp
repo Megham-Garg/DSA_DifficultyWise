@@ -105,14 +105,32 @@ inline void OPEN(string s)
 	freopen((s + ".out").c_str(), "w", stdout); 
 #endif 
 }
+// end of template
+
+int fibRec(int n){
+    if(n==2 || n==1) return n-1;
+    return fibRec(n-1) + fibRec(n-2);
+}
+
+int fibIter(int n){
+    int a = 0, b = 1;
+    if(n==2 || n==1) return n-1;
+    int ct = 2; //current term
+    while(ct!=n){
+        a = a + b;
+        ct++;
+        if(ct == n) break;
+        b = a + b;
+        ct++;
+    }
+    return (ct%2)?a:b;
+}
 
 int main() 
 { 
-	freopen("A.in", "r", stdin); 
-	freopen("output.txt", "w", stdout); 
-
-	int a, b; 
-	fin >> a >> b; 
-	fout << a + b << endl; 
+    int n; cin >> n;
+    cout << fibIter(n);
 	return 0; 
 } 
+// O(n) time and O(n) space due to recursion stack
+// O(n) time and O(1) space

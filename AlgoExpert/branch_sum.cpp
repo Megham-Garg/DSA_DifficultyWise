@@ -26,3 +26,4 @@ void preOrder(Node* node, vector<int>* arr, int sum){
 int main(){
     return 0;
 }
+// O(n) space and time
