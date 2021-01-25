@@ -26,16 +26,14 @@ void longestPeak(vector<int> arr){
             }
         }
         else if(cur < prev) {
-            if(curPeak==-1) curPeak = i-1;
+            if(curPeak==-1 && leftTail) curPeak = i-1;
             rightTail++;
         }
-        else if(cur == prev && curPeak!=-1){
-            if(maxL < leftTail+1+rightTail){
+        else{
+            if(curPeak!=-1 && maxL < leftTail+1+rightTail){
                 maxPeak = curPeak;
                 maxL = max(maxL, leftTail+1+rightTail);
             }
-        }
-        else if(cur == prev && curPeak==-1){
             leftTail = 0;
             rightTail = 0;
             curPeak = -1;
