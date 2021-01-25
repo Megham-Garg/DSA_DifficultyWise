@@ -35,7 +35,7 @@ void threeNumberSum(vector<int> arr, int targetSum){
 
 void threeNumberSumSpecial(vector<int> arr, int targetSum){
     // O(n^2) time
-    // O(1) space
+    // O(n) space for storing triplets
     sort(arr.begin(), arr.end());
     int n = arr.size();
     int cur = 0;
