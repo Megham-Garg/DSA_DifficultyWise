@@ -17,6 +17,9 @@ void BFS(map<int, vector<int>> graph, int start){
         }
     }
 }
+// O(V) space
+// O(V+E) time
+
 // vertices = [6 7]
 // visited 1 4 5 0 2 3
 // cur 3
