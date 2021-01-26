@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// O(n) time
+// O(n) space
 vector<int> zigZag(vector<vector<int>> grid){
     vector<int> res;
     res.push_back(grid[0][0]);
