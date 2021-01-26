@@ -36,7 +36,7 @@ set<vector<int>> fourNumberSum(vector<int> arr, int targetSum){
 void fourNumberSum2(vector<int> arr, int targetSum){
     map<int, vector<pair<int, int>>> mp;
     // 7, 6, 4, -1, 1, 2
-    for(int i = 0; i < arr.size(); i++){        
+    for(int i = 0; i < arr.size(); i++){
         for(int j = i+1; j < arr.size(); j++){
             if(mp.find(targetSum - arr[i] - arr[j])!=mp.end()){
                 for(auto pr : mp[targetSum - arr[i] - arr[j]]){
@@ -47,8 +47,7 @@ void fourNumberSum2(vector<int> arr, int targetSum){
             }
         }
         
-        for(int j = 0; j < i; j++)
-            mp[arr[i] + arr[j]].push_back(make_pair(arr[i], arr[j]));
+        for(int j = 0; j < i; j++) mp[arr[i] + arr[j]].push_back(make_pair(arr[i], arr[j]));
     }
 }
 
