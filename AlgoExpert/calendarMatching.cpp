@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// let available slots in calendar 1 be n
-// let available slots in calendar 2 be m
-// O(n+m) space and less than O(nlog(m)) time
+// let meet slots in calendar 1 be n
+// let meet slots in calendar 2 be m
+// O(n+m) space and time
 pair<int, int> minTime(pair<int, int> a, pair<int, int> b){
     if(a.first < b.first) return a;
     else if(b.first < a.first) return b;
@@ -71,16 +71,17 @@ int main(){
             cout << ele.first << ":" << ele.second << " ";
         }cout << "\n";
 
-        for(int i = 0; i < avail1.size(); i+=2){
-            for(int j = 0; j < avail2.size(); j+=2){
-                if(timeDiff(avail1[i+1], avail2[j]) >= 0) break;
-                if(timeDiff(avail1[i], avail2[j+1]) < 0) continue;
+        int i=0, j=0;
+        while(j < avail2.size() || i < avail1.size()){
+            if(timeDiff(avail1[i+1], avail2[j]) >= 0) i+=2;
+            else if(timeDiff(avail1[i], avail2[j+1]) < 0) j+=2;
+            else{
                 a = maxTime(avail1[i], avail2[j]);
                 b = minTime(avail1[i+1], avail2[j+1]);
                 if(timeDiff(a,b) >= dur) {
                     result.push_back(a);
                     result.push_back(b);
-                }
+                }i+=2; j+=2;
             }
         }
         
@@ -90,5 +91,3 @@ int main(){
     }cout << "\n";
     return 0;
 }
-
-// O()
