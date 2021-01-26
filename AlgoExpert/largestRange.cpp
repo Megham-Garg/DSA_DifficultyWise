@@ -1,10 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// there is O(1) space and O(nlogn) time approach
+// by sorting the array first
+
 // O(n) space
 // O(n) time
 pair<int, int> largestRange(vector<int> arr){
-    map<int, bool> mp;
+    unordered_map<int, bool> mp;
     pair<int, int> res;
     res.first = INT_MAX;
     res.second = INT_MAX;
