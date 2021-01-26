@@ -72,7 +72,7 @@ int main(){
         }cout << "\n";
 
         int i=0, j=0;
-        while(j < avail2.size() || i < avail1.size()){
+        while(j < avail2.size() && i < avail1.size()){
             if(timeDiff(avail1[i+1], avail2[j]) >= 0) i+=2;
             else if(timeDiff(avail1[i], avail2[j+1]) < 0) j+=2;
             else{
@@ -81,7 +81,9 @@ int main(){
                 if(timeDiff(a,b) >= dur) {
                     result.push_back(a);
                     result.push_back(b);
-                }i+=2; j+=2;
+                }
+                if(b == avail2[j+1]) j+=2;
+                else i+=2;
             }
         }
         
