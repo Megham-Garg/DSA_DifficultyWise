@@ -9,7 +9,7 @@ struct Node{
 
 // O(log(n)) time
 // O(1) space
-int findClosestInBST(Node* node, int target){
+int findClosestInBSTRec(Node* node, int target){
     if(!node) return INT_MAX;
     if(node->data == target) return target;
     Node* next = NULL;
@@ -20,6 +20,18 @@ int findClosestInBST(Node* node, int target){
     
     int fut = findClosestInBST(next, target);
     return (abs(node->data - target) < abs(fut - target))?node->data:fut;
+}
+
+int findClosestInBSTIter(Node* node, int target){
+    int res = INT_MAX;
+    while(node){
+        if(node->data == target) return node->data;
+        else if(abs(node->data-target) < abs(res-target)) res = node->data;
+        
+        if(node->left && node->data > target) node = node->left;
+        else if(node->right && node->data < target) node = node->right;
+    }
+    return res;
 }
 
 int main(){
