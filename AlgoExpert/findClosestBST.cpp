@@ -7,6 +7,8 @@ struct Node{
     Node* right;
 };
 
+// O(log(n)) time
+// O(1) space
 int findClosestInBST(Node* node, int target){
     if(!node) return INT_MAX;
     if(node->data == target) return target;
