@@ -26,4 +26,6 @@ void preOrder(Node* node, vector<int>* arr, int sum){
 int main(){
     return 0;
 }
-// O(n) space and time
+// O(n) space for ans array
+// O(logn) for stack space
+// O(n) time

@@ -95,6 +95,8 @@ public:
     Node* getRoot() {return root;}
 };
 
+// O(n) time
+// O(depth) space call stack
 bool validateBST(Node* cur, int l, int r){
     if(cur->data < l || cur->data > r) return false;
     bool res = true;
