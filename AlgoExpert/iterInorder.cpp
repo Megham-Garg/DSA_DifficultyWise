@@ -3,6 +3,9 @@ using namespace std;
 
 void cb(int data){ cout << data << " ";}
 
+
+// O(1) space
+// O(n) time
 void iterInorder(Node* root){
     Node* cur = root, prev = NULL;
     while (cur != NULL){

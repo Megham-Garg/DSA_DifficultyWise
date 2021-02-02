@@ -13,3 +13,6 @@ void flattenTree(Node* node){
     Node* prev = NULL;
     FTHelper(root, prev);
 }
+
+// O(n) time
+// O(1) space

@@ -16,3 +16,6 @@ void invertBinTree(Node* node){
         node->right = NULL;
     }
 }
+
+// O(n) time
+// O(depth) space

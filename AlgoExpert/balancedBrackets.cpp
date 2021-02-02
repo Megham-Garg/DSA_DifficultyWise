@@ -2,6 +2,9 @@
 #include<stack>
 using namespace std;
 
+
+// O(n) space
+// O(n) time
 bool balancedBrackets(string exp){
     stack<char> bracket;
     for(auto chr : exp){
