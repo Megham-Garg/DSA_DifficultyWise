@@ -11,7 +11,7 @@ void helperRightSiblingTree(Node* cur, Node* parent){
         if(parent->left && cur == parent->left){
             cur->right = parent->right;
         }
-        else{
+        else if(parent->right){
             cur->right = parent->right->left;
         }
     }
