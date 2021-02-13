@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// O(items*cap) time and space
 int main(){
     vector<int> weight={2,3,6,7}, value={1,4,5,6};
     int cap=10, items = 4;
