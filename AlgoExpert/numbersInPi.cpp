@@ -2,7 +2,7 @@
 using namespace std;
 
 // O(n) space
-// O(n^2) time
+// O(n^3) time due to substr else O(n^2)
 
 int numbersInPi(string num, const unordered_set<string>& hash, unordered_map<string, int>& dp){
     // if already computed return partitions
