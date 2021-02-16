@@ -23,7 +23,10 @@ int minPartPal(string inp, int start, int end, vector<int>& dp){
     dp[start] = ans;
     return ans;
 }
+// O(n^3) time
+// O(n) space
 
+// O(n^2) time and space approach by precomputing palindromes in 2d array
 int main(){
     vector<string> arr = {"noonabbad", "geek", "aaaa", "abcbass", "abbac"};
     int ans;
