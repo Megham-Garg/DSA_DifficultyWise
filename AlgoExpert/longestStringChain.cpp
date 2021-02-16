@@ -22,7 +22,9 @@ int longestChain(string ele, unordered_map<string, int>& memo, unordered_map<str
 void printChain(unordered_map<string, int>& memo, unordered_map<string, string>& next, int x){
     string c;
     for(auto it = memo.begin(); it != memo.end(); it++) if(it->second == x) {c = it->first; break;}
-    while(next.find(c) != next.end) {cout << c << " "; c = next[c];}
+    while(next.find(c) != next.end()) {cout << c << " "; c = next[c];}
+    cout << c;
+    return;
 }
 
 int main()
