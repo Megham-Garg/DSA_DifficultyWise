@@ -8,3 +8,26 @@ char youngAncestorCommon(Node* x, Node* y){
     return y->data;
 }  
 // O(max (depth(x), depth(y))) space and time
+
+char youngAncestorCommon_v2(Node* x, Node* y){
+    Node* first = x;
+    Node* sec = y;
+    int a = 0, b = 0;
+    while(x){
+        a++;
+        x = x->ancestor;
+    }
+    while(y){
+        b++;
+        y = y->ancestor;
+    }
+    
+    while(first != sec){
+        if(a > b) {first = first->ancestor; a--;}
+        else if(b > a) {sec = sec->ancestor; b--;}
+    }
+
+    return first->data;
+}  
+// O(max (depth(x), depth(y))) time
+// O(1) space
