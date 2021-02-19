@@ -6,4 +6,5 @@ char youngAncestorCommon(Node* x, Node* y){
     }
     while(!visited[y]) y = y->ancestor;
     return y->data;
-}
+}  
+// O(max (depth(x), depth(y))) space and time
