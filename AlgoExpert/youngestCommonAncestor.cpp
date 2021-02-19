@@ -25,6 +25,7 @@ char youngAncestorCommon_v2(Node* x, Node* y){
     while(first != sec){
         if(a > b) {first = first->ancestor; a--;}
         else if(b > a) {sec = sec->ancestor; b--;}
+        else{sec = sec->ancestor; first = first->ancestor;}
     }
 
     return first->data;
