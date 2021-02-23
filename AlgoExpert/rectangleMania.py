@@ -9,10 +9,8 @@ def rectangleWithBottomLeft(pointsOnRight, pointsAbove, points):
 def rectangleMania(points):
     numRect = 0
     for curPoint in points:
-        if curPoint[1] == 0:
-            # print(curPoint)
-            pointsAbove = [point for point in points if point[0] == curPoint[0] and point[1] != 0]
-            pointsOnRight = [point for point in points if point[1] == 0 and point[0] > curPoint[0]]
+            pointsAbove = [point for point in points if point[0] == curPoint[0] and point[1] > curPoint[1]]
+            pointsOnRight = [point for point in points if point[1] == curPoint[1] and point[0] > curPoint[0]]
             numRect += rectangleWithBottomLeft(pointsOnRight, pointsAbove, points)
     return numRect
 
