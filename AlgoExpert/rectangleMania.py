@@ -19,4 +19,4 @@ def rectangleMania(points):
 # O(n) space
 # O(n^2) time
 print("number of rectangles formed are", end = ": ")
-print(rectangleMania([[0,0],[0,1],[2,0],[1,0],[1,1],[2,1]]))
+print(rectangleMania([[0,0],[0,1],[2,0],[1,0],[1,1],[2,1], [1,2], [0,2]]))
