@@ -1,0 +1,4 @@
+left overs:
+ airplane graphs
+ min Heap const
+ 
