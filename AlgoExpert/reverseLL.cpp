@@ -5,6 +5,7 @@ void reverseLL(Node* root){
     root = reverseHelper(root, NULL);
 }
 
+// O(n) time and space
 Node* reverseHelper(Node* cur, Node* prev){
     if(cur->next){
         Node* temp = cur->next;
@@ -14,6 +15,9 @@ Node* reverseHelper(Node* cur, Node* prev){
     cur->next = prev;
     return cur;
 }
+
+// O(1) space
+// O(n) time
 Node* reverseHelperIter(Node* cur){
     Node* prev = NULL;
     Node* next = cur->next;
