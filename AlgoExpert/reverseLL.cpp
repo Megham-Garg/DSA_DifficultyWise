@@ -20,12 +20,12 @@ Node* reverseHelper(Node* cur, Node* prev){
 // O(n) time
 Node* reverseHelperIter(Node* cur){
     Node* prev = NULL;
-    Node* next = cur->next;
+    Node* next;
     while(next){
+        next = cur->next;
         cur->next = prev;
         prev = cur;
         cur = next;
-        next = cur->next;
     }
     return cur;
 }
