@@ -9,9 +9,9 @@ Node* mergeSortedLL(Node* a, Node* b){
             prevB->next = a;
             while(a->next && a->next->data < b->data) a = a->next;
             temp = a->next;
-            a->next = b;
+            if(b != prevB) a->next = b;
             a = temp;
         }
-    }
+    }return b;
 }//O(1) space
 // O(n+m) time
