@@ -37,4 +37,5 @@ Node* rearrange(Node* root, int k){
             cur = cur->next;
         }
     }
+    return root;
 }
