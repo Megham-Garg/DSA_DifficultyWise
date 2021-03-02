@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+// O(n!*n) space and time
 void permutationHelper(string str, vector<string>& perms, int ind){
     if(ind == str.size()-1){
         perms.push_back(str);
