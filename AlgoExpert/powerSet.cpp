@@ -5,15 +5,6 @@ using namespace std;
 // O(2^n*n) space
 // O(2^n*n) time
 // [1,2,3]
-void powerSet(vector<int> arr, set<vector<int>>& ps){
-    ps.insert(arr);
-    if(arr.size()==0) return;
-    for(int i = 0; i < arr.size(); i++){
-        vector<int> temp;
-        for(int j = 0; j < arr.size(); j++) if(i!=j) temp.push_back(arr[j]);
-        powerSet(temp ,ps);
-    }
-}
 void powerSet_v2(vector<int> arr, vector<vector<int>>& ps){
     if(arr.size()==0) return;
     for(int i = 0; i < arr.size(); i++){
