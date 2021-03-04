@@ -1,20 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// O(n) time and space
-int BinTopNum(int n){
-    // 1 2 5 14 36 92
-    vector<int> dp = {0,1,2,5};
-    if(n < 4) return dp[n];
-    for(int i = 4; i <= n; i++){
-        dp.push_back(dp[i-1]*2+4*dp[i-3]);
+// O(n^2) time
+// O(n) space
+int BinTopNum(int n, unordered_map<int, int>& dp){
+    if(dp.find(n) != dp.end()) return dp[n];
+    for(int i = 0; i <= n-1; i++){
+        dp[n]+=dp[i]*dp[n-i-1];
     }
     return dp[n];
 }
 
 int main(){
+    unordered_map<int, int> dp;
+    dp[0]=1;
+    dp[1]=1;
+    dp[2]=2;
+    dp[3]=5;
     for(int i=0; i < 10; i++){
-        cout << "number of binary topologies: " << BinTopNum(i) << "\n";
+        cout << "number of binary topologies: " << BinTopNum(i, dp) << "\n";
     }
     return 0;
 }
