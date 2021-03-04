@@ -4,12 +4,19 @@ using namespace std;
 // aaa 
 // aaaf
 // aaafaaa
+
+// with dp
+// time O(n*m)
+// space O(n*m)
+
+// without dp
+// time O(2^(n+m))
+// space O(n+m)
+
 bool interVeawingStringsHelper(string a, string b, string c, int cur_a, int cur_b, int cur_c, map<pair<int, int>, bool> &dp){
-    cout << cur_a << " " << cur_b <<  " " << cur_c << "\n";
-    pair<int, int> pr;
-    pr.first = cur_a;
-    pr.second = cur_b;
+    pair<int, int> pr; pr.first = cur_a; pr.second = cur_b;
     if(dp.find(pr) != dp.end()) return dp[pr];
+    
     bool res = false;
     if(a.size() == cur_a && b.size() == cur_b) res = true;
     else if(cur_a  == a.size()){
