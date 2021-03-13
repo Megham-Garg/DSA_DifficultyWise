@@ -22,5 +22,8 @@ def quickSelect(arr, k):
     if k-1 > right:
         return quickSelect(arr[right+1:], k-right-1)
     return quickSelect(arr[:right], k)
-    
+
+# o(n) best
+# o(n) avg
+# o(n^2) worst
 print(quickSelect([8,5,2,9,7,6,3],3))
