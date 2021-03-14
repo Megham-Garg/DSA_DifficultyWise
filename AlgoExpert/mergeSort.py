@@ -1,14 +1,10 @@
 def arrDivider(mainArr, auxArr, start, end):
-    
-    print(mainArr, auxArr, start, end, 1)
     if start == end:
         return mainArr
     mid = (start+end)//2
-    print(mainArr, auxArr, start, end, 2)
     auxArr = arrDivider(auxArr, mainArr, start, mid)
     auxArr = arrDivider(auxArr, mainArr, mid+1, end)
     mainArr = mergeArr(mainArr, auxArr, start, mid, end)
-    print(mainArr, auxArr, start, end, mid, 3)
     return mainArr
 
 def mergeArr(mainArr, auxArr, start, mid, end):
