@@ -2,10 +2,9 @@ def arrDivider(mainArr, auxArr, start, end):
     if start == end:
         return mainArr
     mid = (start+end)//2
-    auxArr = arrDivider(auxArr, mainArr, start, mid)
-    auxArr = arrDivider(auxArr, mainArr, mid+1, end)
-    mainArr = mergeArr(mainArr, auxArr, start, mid, end)
-    return mainArr
+    arrDivider(auxArr, mainArr, start, mid)
+    arrDivider(auxArr, mainArr, mid+1, end)
+    mergeArr(mainArr, auxArr, start, mid, end)
 
 def mergeArr(mainArr, auxArr, start, mid, end):
     left = start
@@ -26,12 +25,12 @@ def mergeArr(mainArr, auxArr, start, mid, end):
         mainArr[start]=auxArr[right]
         right+=1
         start+=1
-    return mainArr
 
 # O(nlogn) time
 # O(n) space
 def mergeSort(arr):
     auxArr = arr.copy()
-    return arrDivider(arr, auxArr, 0, len(arr)-1)
+    arrDivider(arr, auxArr, 0, len(arr)-1)
+    return arr
     
 print(mergeSort([8,5,2,9,5,6,3]))
